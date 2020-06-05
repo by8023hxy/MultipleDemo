@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <include layout="@layout/normal_title_layout" />
+    <include layout="@layout/normal_task_layout"/>
+
+    <TextView
+        android:id="@+id/mFlagTest"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_margin="@dimen/margin_10"
+        android:background="@drawable/backgroud_corner"
+        android:gravity="center"
+        android:text="@string/intentflagTest"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_margin="@dimen/margin_10"
+        android:background="@drawable/backgroud_corner" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+
+        android:layout_margin="@dimen/margin_10"
+        android:background="@drawable/backgroud_corner" />
+
+</LinearLayout>

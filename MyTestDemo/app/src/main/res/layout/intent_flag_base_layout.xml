@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/normal_title_layout" />
+
+    <include layout="@layout/normal_task_layout" />
+
+    <Button
+        android:id="@+id/btn_normal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:background="@android:color/holo_blue_light"
+        android:text="@string/activity_normal"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_new_task"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="@dimen/margin_10"
+        android:background="@android:color/holo_blue_light"
+        android:text="@string/flag_activity_new_task"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_clear_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="@dimen/margin_10"
+        android:background="@android:color/holo_blue_light"
+        android:text="@string/flag_activity_clear_top"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_clear_single_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="@dimen/margin_10"
+        android:background="@android:color/holo_blue_light"
+        android:text="@string/flag_activity_clear_single_top"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_clear_newtask_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="@dimen/margin_10"
+        android:background="@android:color/holo_blue_light"
+        android:text="@string/flag_activity_clear_newtask_top"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+</LinearLayout>

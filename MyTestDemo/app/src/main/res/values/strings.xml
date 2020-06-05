@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MyTestDemo</string>
+    <string name="activity_normal">正常启动Activity</string>
+    <string name="flag_activity_new_task">FLAG_ACTIVITY_NEW_TASK</string>
+    <string name="flag_activity_clear_top">FLAG_ACTIVITY_CLEAR_TOP</string>
+    <string name="flag_activity_clear_single_top">FLAG_ACTIVITY_CLEAR_TOP\nFLAG_ACTIVITY_SINGLE_TOP</string>
+    <string name="flag_activity_clear_newtask_top">FLAG_ACTIVITY_CLEAR_TOP\nFLAG_ACTIVITY_NEW_TASK</string>
+    <string name="intentflagTest">启动模式及IntentFlag测试</string>
+</resources>
