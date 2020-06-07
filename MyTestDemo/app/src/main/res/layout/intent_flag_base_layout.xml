@@ -56,4 +56,13 @@
         android:text="@string/flag_activity_clear_newtask_top"
         android:textColor="@android:color/white"
         android:textSize="18sp" />
+    <Button
+        android:id="@+id/btn_clear_task"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="@dimen/margin_10"
+        android:background="@android:color/holo_blue_light"
+        android:text="@string/flag_activity_clear_task"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
 </LinearLayout>

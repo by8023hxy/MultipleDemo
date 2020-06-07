@@ -20,7 +20,9 @@
         <activity android:name=".intentflag.TestIntentFlagActivityA" />
         <activity android:name=".intentflag.TestIntentFlagActivityB" />
         <activity android:name=".intentflag.TestIntentFlagActivityC" />
-        <activity android:name=".intentflag.TestIntentFlagActivityD" />
+        <activity android:name=".intentflag.TestIntentFlagActivityD"
+
+            />
         <activity android:name=".intentflag.TestIntentFlagActivityE" />
         <activity android:name=".intentflag.TestIntentFlagActivityF" />
     </application>

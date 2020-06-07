@@ -29,7 +29,7 @@ class TestIntentFlagActivityF : BaseActivity() {
                 btn_normal,
                 btn_clear_top,
                 btn_clear_single_top,
-                btn_clear_newtask_top
+                btn_clear_newtask_top,btn_clear_task
             )
         ) {
             when (it.id) {
@@ -44,6 +44,9 @@ class TestIntentFlagActivityF : BaseActivity() {
                 }
                 R.id.btn_clear_newtask_top -> {
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                }
+                R.id.btn_clear_task->{
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
                 }
 
             }

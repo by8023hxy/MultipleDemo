@@ -25,6 +25,7 @@ class TestIntentFlagActivityC : BaseActivity() {
     override fun onViewClick() {
         setOnClickNoDouble(listOf(btn_normal)){
             intent = Intent(this, TestIntentFlagActivityD::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
         }
     }
