@@ -1,6 +1,5 @@
 import com.baiyu.dependencies_config.BuildConfig
 import com.baiyu.dependencies_config.dependencies.AndroidX
-import com.baiyu.dependencies_config.dependencies.Koin
 import com.baiyu.dependencies_config.dependencies.NetWork
 import com.baiyu.dependencies_config.dependencies.Testing
 import com.baiyu.dependencies_config.dependencies.ThirdParty
@@ -9,81 +8,78 @@ import com.baiyu.dependencies_config.dependencies.Google
 plugins {
     id "com.baiyu.dependencies_config"
 }
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
-
 android {
     compileSdkVersion BuildConfig.compileSdkVersion
     buildToolsVersion BuildConfig.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.baiyu.mytestdemo"
         minSdkVersion BuildConfig.minSdkVersion
         targetSdkVersion BuildConfig.targetSdkVersion
         versionCode BuildConfig.versionCode
         versionName BuildConfig.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
         release {
-            minifyEnabled true
-            shrinkResources true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
-    lintOptions {
-        checkReleaseBuilds false
-        abortOnError false
-    }
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
     dataBinding {
         enabled = true
     }
-
+    androidExtensions {
+        experimental = true
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
     testImplementation(Testing.junit)
     androidTestImplementation(Testing.androidJunit)
     androidTestImplementation(Testing.androidRunner)
     androidTestImplementation(Testing.espresso)
 
-    implementation project(':basearchitecture')
-    compileOnly(AndroidX.appcompat)
-    compileOnly(AndroidX.constraintlayout)
-    compileOnly(AndroidX.recyclerView)
-    compileOnly(Google.material)
+    implementation(AndroidX.appcompat)
+    implementation(AndroidX.coreKtx)
+    implementation(AndroidX.recyclerView)
+    implementation(AndroidX.constraintlayout)
 
-    compileOnly(AndroidX.Lifecycle.lifecycleRuntime)
-    compileOnly(AndroidX.Lifecycle.commonJava8)
-    compileOnly(AndroidX.Lifecycle.extensions)
-    compileOnly(AndroidX.Lifecycle.viewModel)
-    compileOnly(AndroidX.Lifecycle.liveData)
+    implementation(AndroidX.Fragment.fragmentKtx)
 
-    compileOnly(AndroidX.Navigation.runtime)
-    implementation(Google.gson)
+    implementation(AndroidX.Lifecycle.commonJava8)
+    implementation(AndroidX.Lifecycle.liveDataKtx)
+    implementation(AndroidX.Lifecycle.viewModelKtx)
 
-    implementation(ThirdParty.permission)
+    implementation(AndroidX.Navigation.uiKtx)
+
+    implementation(Google.material)
+
     implementation(ThirdParty.Glide.glide)
-    annotationProcessor(ThirdParty.Glide.compiler)
+    kapt(ThirdParty.Glide.compiler)
 
-    implementation(ThirdParty.blankjUtils)
-    implementation(NetWork.Coroutines.coroutines)
-    compileOnly(NetWork.Retrofit.retrofit)
-    compileOnly(NetWork.Retrofit.gson)
+    implementation(ThirdParty.roundedImageView)
+    implementation(ThirdParty.BRVAH)
+    implementation(NetWork.Retrofit.retrofit)
+    implementation(NetWork.Retrofit.gson)
+    implementation(NetWork.OkHttp.okhttp)
+    implementation(NetWork.OkHttp.okhttp_log)
+    implementation(ThirdParty.Timber)
 
-//    implementation(Koin.koin_android)
-//    implementation(Koin.koin_android_scope)
-//    implementation(Koin.koin_android_viewmodel)
 }

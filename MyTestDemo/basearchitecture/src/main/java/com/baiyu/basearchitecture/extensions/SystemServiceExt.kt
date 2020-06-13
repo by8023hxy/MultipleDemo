@@ -1,4 +1,4 @@
-package com.baiyu.mytestdemo.ext
+package com.baiyu.basearchitecture.extensions
 
 import android.app.*
 import android.app.job.JobScheduler
@@ -24,9 +24,7 @@ import android.view.inputmethod.InputMethodManager
 import androidx.core.content.ContextCompat
 
 /**
- * @author Baiyu
- * @date :2020/6/5 8:22 PM June
- * @version: 1.0
+ * Return system service which type is [T]
  */
 inline fun <reified T> Context.getSystemService(): T? =
     ContextCompat.getSystemService(this, T::class.java)
@@ -57,3 +55,4 @@ val Context.downloadManager get() = getSystemService<DownloadManager>()
 val Context.batteryManager get() = getSystemService<BatteryManager>()
 val Context.jobScheduler get() = getSystemService<JobScheduler>()
 val Context.accessibilityManager get() = getSystemService<AccessibilityManager>()
+

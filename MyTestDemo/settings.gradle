@@ -1,2 +1,5 @@
+
+includeBuild("dependencies_config")
+include ':basearchitecture'
 rootProject.name='MyTestDemo'
 include ':app'
